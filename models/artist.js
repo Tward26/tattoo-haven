@@ -1,39 +1,37 @@
 module.exports = function(sequelize, DataTypes) {
-  var Artist = sequelize.define('Artist', {
+  const Artist = sequelize.define('Artist', {
     name: {
       type: DataTypes.STRING,
-      validate: {
-        allowNull: false
-      }
+      allowNull: false
     },
     bio: {
       type: DataTypes.TEXT,
-      validate: {
-        allowNull: false
-      }
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: {
-        allowNull: false,
         isEmail: true 
       }
     },
     imagepath: {
-      type: DataTypes.JSON
+      type: DataTypes.JSON,
+      allowNull: false
     },
     googlepath: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: {
         isURL: true
       }
     }
   });
 
-  Arist.associate = function(models) {
+  Artist.associate = function(models) {
     // Associating Arist with Clients
     // When an Arist is deleted, also delete any associated Clients
-    Arist.hasMany(models.Client, {
+    Artist.hasMany(models.Client, {
       onDelete: 'cascade'
     });
   };

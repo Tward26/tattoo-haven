@@ -1,30 +1,26 @@
 module.exports = function (sequelize, DataTypes) {
-  var Client = sequelize.define('Client', {
+  const Client = sequelize.define('Client', {
     name: {
       type: DataTypes.STRING,
-      validate: {
-        allowNull: false
-      }
+      allowNull: false
     },
     phone: {
       type: DataTypes.TEXT,
+      allowNull: false,
       validate: {
-        allowNull: false,
         is: /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/
       }
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: {
-        allowNull: false,
         isEmail: true
       }
     },
     idea: {
       type: DataTypes.TEXT,
-      validate: {
-        allowNull: false
-      }
+      allowNull: false
     }
   });
 
