@@ -15,7 +15,7 @@ module.exports = function (app) {
   //Get a single artist
   app.get('/api/artists/:id', async (req, res) => {
     try {
-      const dbArtist = await db.Artist.findAll({ where: { id: req.params.id } });
+      const dbArtist = await db.Artist.findAll({ where: { id: req.params.id }, include: [db.Client] });
       res.json(dbArtist);
 
     } catch (err) {
@@ -47,7 +47,7 @@ module.exports = function (app) {
   app.put('/api/artists/:id?', async (req, res) => {
     try {
       const dbArtist = await db.Artist.update(
-        { name: req.body.name, bio: req.body.bio, email: req.body.email, imagepath: req.body.imagePath, googlepath: req.body.googlePath },
+        req.body,
         { where: { id: req.body.id } }
       );
       res.json(dbArtist);
@@ -70,7 +70,7 @@ module.exports = function (app) {
   //Get a single client
   app.get('/api/clients/:id', async (req, res) => {
     try {
-      const dbClient = await db.Client.findAll({ where: { id: req.params.id } });
+      const dbClient = await db.Client.findAll({ where: { id: req.params.id }, include: [db.Artist] });
       res.json(dbClient);
 
     } catch (err) {
@@ -89,7 +89,7 @@ module.exports = function (app) {
   });
 
   // Delete a client by id
-  app.delete('/api/clients/:id', async (req, res) => {
+  app.delete('/api/clients/:id?', async (req, res) => {
     try {
       const dbClient = await db.Client.destroy({ where: { id: req.body.id } });
       res.json(dbClient);
@@ -102,13 +102,15 @@ module.exports = function (app) {
   app.put('/api/clients/:id?', async (req, res) => {
     try {
       const dbClient = await db.Client.update(
-        { name: req.body.name, phone: req.body.phone, email: req.body.email, idea: req.body.idea },
-        { where: { id: req.body.id } }
-      );
+        req.body,
+        {
+          where: {
+            id: req.body.id
+          }
+        });
       res.json(dbClient);
     } catch (err) {
       res.status(500).send(err);
     }
   });
-
 };
