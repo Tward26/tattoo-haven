@@ -1,10 +1,10 @@
 var db = require('../models');
-const path = require('path');
+// const path = require('path');
 
 module.exports = function(app) {
   // Load index page
   app.get('/', function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Artist.findAll({}).then(function(dbExamples) {
       res.render('index', {
         msg: 'Welcome!',
         examples: dbExamples
@@ -14,7 +14,7 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get('/artists/:id', function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Artist.findAll({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render('example', {
         example: dbExample
       });
