@@ -15,7 +15,11 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true 
       }
     },
-    imagepath: {
+    profilepath: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    gallerypath: {
       type: DataTypes.JSON,
       allowNull: false
     },
