@@ -3,11 +3,11 @@ var CLIENT_ID = '515691578208-vi6vc60j28biaopfa9ph26u1jobas5jp.apps.googleuserco
 var API_KEY = 'AIzaSyDNBkDQKI5qRSSDO2ByGd0gmg0PCE4pVOU';
 
 // Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+var DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'];
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/calendar.events";
+var SCOPES = 'https://www.googleapis.com/auth/calendar.events';
 
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
