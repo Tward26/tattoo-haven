@@ -1,13 +1,13 @@
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '515691578208-vi6vc60j28biaopfa9ph26u1jobas5jp.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyDNBkDQKI5qRSSDO2ByGd0gmg0PCE4pVOU';
+var API_KEY = 'AIzaSyDyQy3odjccdiQ7lbDJ0j8dd6sp5ah5RmU';
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'];
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-var SCOPES = 'https://www.googleapis.com/auth/calendar.events';
+var SCOPES = 'https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.readonly';
 
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
@@ -37,8 +37,6 @@ function initClient() {
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     authorizeButton.onclick = handleAuthClick;
     signoutButton.onclick = handleSignoutClick;
-  }, function(error) {
-    appendPre(JSON.stringify(error, null, 2));
   });
 }
 
@@ -50,7 +48,9 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
-    listUpcomingEvents();
+    getTatCalendarId(event);
+    // console.log(calendarID);
+    // createEvent(calendarID, event);
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -60,27 +60,15 @@ function updateSigninStatus(isSignedIn) {
 /**
  *  Sign in the user upon button click.
  */
-function handleAuthClick(event) {
+function handleAuthClick() {
   gapi.auth2.getAuthInstance().signIn();
 }
 
 /**
  *  Sign out the user upon button click.
  */
-function handleSignoutClick(event) {
+function handleSignoutClick() {
   gapi.auth2.getAuthInstance().signOut();
-}
-
-/**
- * Append a pre element to the body containing the given message
- * as its text node. Used to display the results of the API call.
- *
- * @param {string} message Text to be placed in pre element.
- */
-function appendPre(message) {
-  var pre = document.getElementById('content');
-  var textContent = document.createTextNode(message + '\n');
-  pre.appendChild(textContent);
 }
 
 /**
@@ -88,29 +76,53 @@ function appendPre(message) {
  * the authorized user's calendar. If no events are found an
  * appropriate message is printed.
  */
-function listUpcomingEvents() {
-  gapi.client.calendar.events.list({
-    'calendarId': 'primary',
-    'timeMin': (new Date()).toISOString(),
-    'showDeleted': false,
-    'singleEvents': true,
-    'maxResults': 10,
-    'orderBy': 'startTime'
-  }).then(function(response) {
-    var events = response.result.items;
-    appendPre('Upcoming events:');
 
-    if (events.length > 0) {
-      for (i = 0; i < events.length; i++) {
-        var event = events[i];
-        var when = event.start.dateTime;
-        if (!when) {
-          when = event.start.date;
-        }
-        appendPre(event.summary + ' (' + when + ')')
+function getTatCalendarId() {
+  gapi.client.calendar.calendarList.list({}).then(function (response) {
+    const calList = response.result.items;
+    let calendarId = null;
+    for (let i = 0; i < calList.length; i++) {
+      if (calList[i].summary === ('Tattoo' || 'tattoo')) {
+        calendarId = calList[i].id;
       }
-    } else {
-      appendPre('No upcoming events found.');
+    }
+    createEvent(calendarId, makeEvent('Tyler Ward', 'Butterfly', 't.ward26@gmail.com'));
+  });
+}
+
+function createEvent(calendarId, event) {
+  let request = gapi.client.calendar.events.insert({
+    'calendarId': calendarId,
+    'resource': event,
+    'sendNotifications': true
+  });
+
+  request.execute(function(event) {
+    if(event.status === 'confirmed'){
+      //replace with Modal
+      alert('Appointment Confirmed');
     }
   });
+}
+
+//make start date and time dynamic fields
+function makeEvent(artist, idea, clientEmail){
+  let description = 'Appointment with ' + artist + ' for ' + idea;
+  var event = {
+    'summary': 'Tattoo Appointment',
+    'location': 'BJ\'s Tattoo Haven, Kansas City, MO',
+    'description': description,
+    'start': {
+      'dateTime': '2019-06-07T09:00:00',
+      'timeZone': 'America/Chicago'
+    },
+    'end': {
+      'dateTime': '2019-06-07T17:00:00',
+      'timeZone': 'America/Chicago'
+    },
+    'attendees': [
+      {'email': clientEmail}
+    ]
+  };
+  return event;
 }
