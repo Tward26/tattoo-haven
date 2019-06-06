@@ -35,10 +35,12 @@
                 <div class="dropdown">
                   <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
                   <div class="dropdown-content">
-                    <a href="/artists/2" class="artist" data-id="2">Benita</a>
-                    <a href="/artists/3" class="artist" data-id="3">Justin</a>
+                    {{#each allArtists}}
+                    <a href="/artists/{{id}}" class="artist">{{name}}</a>
+                    {{!-- <a href="/artists/3" class="artist" data-id="3">Justin</a>
                     <a href="/artists/1" class="artist" data-id="1">Tyler</a>
-                    <a href="/artists/4" class="artist" data-id="4">Halie</a>
+                    <a href="/artists/4" class="artist" data-id="4">Halie</a> --}}
+                    {{/each}}
                   </div>
                 </div>
                 <li class="nav-link"><a href="/appointments">Inquire</a></li>
