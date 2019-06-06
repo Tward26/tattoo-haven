@@ -4,33 +4,66 @@ var db = require('../models');
 module.exports = function (app) {
 
   // Load index page
-  app.get('/', function (req, res) {
-    // res.sendFile(path.join(__dirname, '../public/index.html'));
-    res.render('index');
-
+  app.get('/', async (req, res) => {
+    try {
+      var allArtists = await db.Artist.findAll({});
+      res.render('index', {
+        allArtists
+      });
+    } catch (err) {
+      res.render('500', {
+        layout: 'main'
+      });
+    }
   });
 
-  app.get('/artists', function (req, res) {
-    res.render('artists');
 
+  // Load artist page
+  app.get('/artists', async (req, res) => {
+    try {
+      var allArtists = await db.Artist.findAll({});
+      res.render('artists', {
+        allArtists
+      });
+    } catch (err) {
+      res.render('500', {
+        layout: 'main'
+      });
+    }
   });
 
-  // Load example page and pass in an example by id
-  app.get('/artists/:id', function (req, res) {
-    db.Artist.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (result) {
-      res.render('artists', { artists: result});
-      console.log(result.gallerypath[1]);
-    });
+  // Load artists page based on id
+  app.get('/artists/:id', async (req, res) => {
+    try {
+      var artist = await db.Artist.findOne({
+        where: {
+          id: req.params.id
+        }
+      });
+      var allArtists = await db.Artist.findAll({});
+      res.render('artists', {
+        artist,
+        allArtists
+      });
+    } catch (err) {
+      res.render('500', {
+        layout: 'main'
+      });
+    }
   });
-
 
   // Load reseveration page
-  app.get('/appointments', function (req, res) {
-    res.render('appointments');
+  app.get('/appointments', async (req, res) => {
+    try {
+      var allArtists = await db.Artist.findAll({});
+      res.render('appointments', {
+        allArtists
+      });
+    } catch (err) {
+      res.render('500', {
+        layout: 'main'
+      });
+    }
   });
 
   // Render 404 page for any unmatched routes

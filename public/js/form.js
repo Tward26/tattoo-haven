@@ -97,8 +97,8 @@ function createEvent(calendarId, event) {
     'sendNotifications': true
   });
 
-  request.execute(function(event) {
-    if(event.status === 'confirmed'){
+  request.execute(function (event) {
+    if (event.status === 'confirmed') {
       //replace with Modal
       alert('Appointment Confirmed');
     }
@@ -106,7 +106,7 @@ function createEvent(calendarId, event) {
 }
 
 //make start date and time dynamic fields
-function makeEvent(artist, idea, clientEmail){
+function makeEvent(artist, idea, clientEmail) {
   let description = 'Appointment with ' + artist + ' for ' + idea;
   var event = {
     'summary': 'Tattoo Appointment',
@@ -120,9 +120,30 @@ function makeEvent(artist, idea, clientEmail){
       'dateTime': '2019-06-07T17:00:00',
       'timeZone': 'America/Chicago'
     },
-    'attendees': [
-      {'email': clientEmail}
-    ]
+    'attendees': [{
+      'email': clientEmail
+    }]
   };
   return event;
 }
+
+$('.submit').on('click', function () {
+  var artist = document.getElementById('artists');
+  var artistSelected = artist.options[artist.selectedIndex].value;
+  var name = $('#name').val();
+  var phone = parseInt($('#phone').val().split('-').join(''));
+  var email = $('#email').val();
+  var idea = $('#idea').val();
+  $.post('api/clients', {
+    type: 'POST',
+    name: name,
+    phone: phone,
+    email: email,
+    idea: idea,
+    ArtistId: artistSelected
+  }).then(function(data) {
+    console.log(data);
+    //change to a modal
+    alert('Thanks for your submission!');
+  });
+});
