@@ -22,7 +22,9 @@ module.exports = function (app) {
         id: req.params.id
       }
     }).then(function (result) {
-      res.render('artists', { artists: result});
+      res.render('artists', {
+        artists: result
+      });
       console.log(result.gallerypath[1]);
     });
   });
@@ -30,8 +32,16 @@ module.exports = function (app) {
 
   // Load reseveration page
   app.get('/appointments', function (req, res) {
-    res.render('appointments');
+    db.Artist.findAll({}).then(function (result) {
+      res.render('appointments', {
+        artists: result
+      });
+    });
   });
+
+  // app.get('/appointments/:id', function (req, res) {
+  //   res.render('appointments');
+  // });
 
   // Render 404 page for any unmatched routes
   app.get('*', function (req, res) {
