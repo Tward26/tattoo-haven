@@ -3,11 +3,30 @@
 @import url('../assets/fonts/Hurson.ttf');
 
 @font-face {
-font-family: 'Hurson';
-src: url('../assets/fonts/Hurson.ttf');
-src: url('../assets/fonts/Hurson.ttf') format("woff"),
-url('../assets/fonts/Hurson.ttf') format("opentype"),
-url('../assets/fonts/Hurson.ttf') format("svg");
+  font-family: 'Hurson';
+  src: url('../assets/fonts/Hurson.ttf');
+  src: url('../assets/fonts/Hurson.ttf') format("woff"),
+    url('../assets/fonts/Hurson.ttf') format("opentype"),
+    url('../assets/fonts/Hurson.ttf') format("svg");
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fourohfour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Hurson';
+  font-size: 80px;
+  background-image: url('../assets/img/1006-Winged-skull.png');
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  color: rgb(55, 177, 173);
+  -webkit-text-stroke: black 1px;
 }
 
 .header {
@@ -25,7 +44,7 @@ url('../assets/fonts/Hurson.ttf') format("svg");
   background-blend-mode: lighten;
 }
 
-.logo h1{
+.logo h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -37,10 +56,9 @@ url('../assets/fonts/Hurson.ttf') format("svg");
   -webkit-text-stroke: black 1px;
 }
 
-navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.profilepic {
+  width: 400px;
+  height: auto;
 }
 
 navbar li {
@@ -48,7 +66,7 @@ navbar li {
   top: 5px;
   display: inline;
   list-style: none;
-  padding: 30px;
+  padding: 80px;
   font-family: 'Raleway', serif;
   font-size: 30px;
 }
@@ -61,13 +79,11 @@ navbar li {
 
 .nav-link a {
   background:
-     linear-gradient(
-       to bottom, var(--mainColor) 0%,
-       var(--mainColor) 100%
-     );
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 4px 4px;
+    linear-gradient(to bottom, var(--mainColor) 0%,
+      var(--mainColor) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
   color: #000;
   text-decoration: none;
   transition: background-size .5s;
@@ -96,9 +112,10 @@ a:hover {
   display: none;
   position: absolute;
   font-family: 'Raleway';
+  font-size: 20px;
   background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -111,20 +128,28 @@ a:hover {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: rgba(207, 65, 143, 0.5);
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 img {
   transition: filter .1s ease-in-out;
-  -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-  filter: grayscale(100%); /* FF 35+ */
+  -webkit-filter: grayscale(100%);
+  /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(100%);
+  /* FF 35+ */
 }
 
 img:hover {
-  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-  filter: grayscale(0%); /* FF 35+ */
+  -webkit-filter: grayscale(0%);
+  /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%);
+  /* FF 35+ */
 }
 
 
@@ -151,8 +176,22 @@ footer i {
   padding: 15px;
 }
 
+@media only screen and (min-width: 801px) {
+  .hamburger {
+    visibility: hidden;
+  }
+}
+
 @media only screen and (max-width: 800px) {
-navbar li {
-display: none;
+  navbar li {
+    display: none;
+  }
+
+  .hamburger a {
+    display: flex;
+    justify-content: flex-end;
+    visibility: visible;
+    font-size: 1.5em;
+    color: black;
   }
 }
