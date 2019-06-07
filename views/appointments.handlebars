@@ -6,33 +6,29 @@
     <div class="control">
       <div class="select artist">
         <select id="artists">
-          <option>Select Artist</option>
+          <option disabled selected>Select Artist</option>
           {{#each allArtists}}
-          <option value="{{id}}">{{name}}</option>
+          <option class="artist" data-cal="{{googlepath}}" value="{{id}}">{{name}}</option>
           {{/each}}
         </select>
       </div>
     </div>
   </div>
+<div class="columns is-centered">
+   <div class="column is-8 calendar">
+    </div>
+</div>
   <div class="field">
     <label class="label">Name</label>
-    <div class="control">
+    <div class="control has-icons-left has-icons-right">
       <input id="name" class="input" type="text" placeholder="Your Name">
+       <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
     </div>
   </div>
 
-  {{!-- <div class="field">
-    <label class="label">Username</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" type="text" placeholder="Text input" value="bulma">
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
-  </div> --}}
+
     <div class="field">
     <label class="label">Phone</label>
     <div class="control has-icons-left has-icons-right">
@@ -59,31 +55,31 @@
   <div class="field">
     <label class="label">Idea</label>
     <div class="control">
-      <textarea id="idea" class="textarea" placeholder="Textarea"></textarea>
+      <textarea id="idea" class="textarea" placeholder=""></textarea>
     </div>
   </div>
 
-  {{!-- <div class="field">
-    <div class="control">
-      <label class="checkbox">
-        <input type="checkbox">
-        I agree to the <a href="#">terms and conditions</a>
-      </label>
+      <div class="field">
+    <label class="label">Date</label>
+    <div class="control has-icons-left has-icons-right">
+      <input id="phone" class="input" type="date" placeholder="">
+      <span class="icon is-small is-left">
+        <i class="fas fa-calendar"></i>
+      </span>
     </div>
-  </div> --}}
+  </div>
 
-  {{!-- <div class="field">
-    <div class="control">
-      <label class="radio">
-        <input type="radio" name="question">
-        Yes
-      </label>
-      <label class="radio">
-        <input type="radio" name="question">
-        No
-      </label>
+      <div class="field">
+    <label class="label">Time</label>
+    <div class="control has-icons-left has-icons-right">
+      <input id="phone" class="input" type="time" placeholder="">
+      <span class="icon is-small is-left">
+        <i class="fas fa-clock"></i>
+      </span>
     </div>
-  </div> --}}
+  </div>
+
+  {{!-- Add form for date and time. Make greyed out and have radio button enable. --}}
 
   <div class="field is-grouped">
     <div class="control">

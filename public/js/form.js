@@ -127,23 +127,3 @@ function makeEvent(artist, idea, clientEmail) {
   return event;
 }
 
-$('.submit').on('click', function () {
-  var artist = document.getElementById('artists');
-  var artistSelected = artist.options[artist.selectedIndex].value;
-  var name = $('#name').val();
-  var phone = parseInt($('#phone').val().split('-').join(''));
-  var email = $('#email').val();
-  var idea = $('#idea').val();
-  $.post('api/clients', {
-    type: 'POST',
-    name: name,
-    phone: phone,
-    email: email,
-    idea: idea,
-    ArtistId: artistSelected
-  }).then(function(data) {
-    console.log(data);
-    //change to a modal
-    alert('Thanks for your submission!');
-  });
-});
