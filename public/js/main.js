@@ -9,6 +9,12 @@ $('#artists').on('change', function() {
   calendarDiv.hide().slideDown(500);
 });
 
+$('#ham').on('click', function() {
+  var mobileNav = $('#mobilenav');
+  mobileNav.hide().slideDown(500);
+  console.log('I\'ve been clicked');
+});
+
 $('.submit').on('click', function () {
   var artistSelected = artist.options[artist.selectedIndex].value;
   var name = $('#name').val();

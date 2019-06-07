@@ -194,4 +194,7 @@ footer i {
     font-size: 1.5em;
     color: black;
   }
+  #mobilenav {
+    display: none;
+  }
 }
