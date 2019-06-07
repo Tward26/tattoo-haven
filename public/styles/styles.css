@@ -1,3 +1,197 @@
-.list-group-item {
-  line-height: 2.5;
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('../assets/fonts/Hurson.ttf');
+
+@font-face {
+  font-family: 'Hurson';
+  src: url('../assets/fonts/Hurson.ttf');
+  src: url('../assets/fonts/Hurson.ttf') format("woff"),
+    url('../assets/fonts/Hurson.ttf') format("opentype"),
+    url('../assets/fonts/Hurson.ttf') format("svg");
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fourohfour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Hurson';
+  font-size: 80px;
+  background-image: url('../assets/img/1006-Winged-skull.png');
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  color: rgb(55, 177, 173);
+  -webkit-text-stroke: black 1px;
+}
+
+.header {
+  /* background-image: url('../assets/img/header-grayscale.jpeg'); */
+  background-size: cover;
+  /* border-bottom: 5px rgb(46, 46, 46) solid; */
+  margin-bottom: 20px;
+}
+
+.logo {
+  background-image: url('../assets/img/cut-roses.svg');
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: center;
+  background-blend-mode: lighten;
+}
+
+.logo h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Hurson';
+  font-size: 100px;
+  color: rgb(55, 177, 173);
+  padding: 0px;
+  margin: 0px;
+  -webkit-text-stroke: black 1px;
+}
+
+.profilepic {
+  width: 400px;
+  height: auto;
+}
+
+navbar li {
+  position: relative;
+  top: 5px;
+  display: inline;
+  list-style: none;
+  padding: 80px;
+  font-family: 'Raleway', serif;
+  font-size: 30px;
+}
+
+
+
+:root {
+  --mainColor: rgba(207, 65, 143, 0.5);
+}
+
+.nav-link a {
+  background:
+    linear-gradient(to bottom, var(--mainColor) 0%,
+      var(--mainColor) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: #000;
+  text-decoration: none;
+  transition: background-size .5s;
+}
+
+.footer-link {
+  color: black;
+}
+
+.footer-link:hover {
+  color: rgba(207, 65, 143, 0.5);
+}
+
+a:hover {
+  background-size: 4px 50px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  font-family: 'Raleway';
+  font-size: 20px;
+  background-color: #f1f1f1;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgba(207, 65, 143, 0.5);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+img {
+  transition: filter .1s ease-in-out;
+  -webkit-filter: grayscale(100%);
+  /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(100%);
+  /* FF 35+ */
+}
+
+img:hover {
+  -webkit-filter: grayscale(0%);
+  /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%);
+  /* FF 35+ */
+}
+
+
+.main {
+  font-family: 'Raleway';
+}
+
+.main h1 {
+  font-family: 'Hurson';
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 2em;
+}
+
+footer i {
+  padding: 15px;
+}
+
+@media only screen and (min-width: 801px) {
+  .hamburger {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  navbar li {
+    display: none;
+  }
+
+  .hamburger a {
+    display: flex;
+    justify-content: flex-end;
+    visibility: visible;
+    font-size: 1.5em;
+    color: black;
+  }
 }

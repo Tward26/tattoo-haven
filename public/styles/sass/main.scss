@@ -1,0 +1,8 @@
+@charset "utf-8";
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+$main-color: rgb(55, 177, 173);
+
+$primary: $main-color;
+
+@import "../node_modules/bulma/bulma";

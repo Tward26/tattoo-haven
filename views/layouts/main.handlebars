@@ -1,15 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BJ'S TATTOO HAVEN</title>
+  <link type="text/css" rel="stylesheet" href="/styles/main.css">
+  <link type="text/css" rel="stylesheet" href="/styles/styles.css">
+  <script src="https://kit.fontawesome.com/acfa7ab8e7.js"></script>
 </head>
 
 <body>
+  <section class="hero is-small is-secondary header">
+    <div class="hero-body">
+      <div class="hamburger">
+        <a href="#"><i class="fas fa-bars"></i></a>
+      </div>
+      <div class="columns is-mobile">
+        <div class="column logo has-text-centered">
+          <h1>BJ's</h1>
+          <h1>Tattoo</h1>
+          <h1>Haven</h1>
+          {{!-- <button id="authorize_button" style="display: none;">Authorize</button>
+          <button id="signout_button" style="display: none;">Sign Out</button> --}}
+        </div>
+      </div>
+      <div class="container">
+        <div class="columns is-mobile has-text-centered navbar">
+          <div class="column navbar">
+            <navbar>
+              <ul>
+                <li class="nav-link"><a href="/">Home</a></li>
+                <div class="dropdown">
+                  <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
+                  <div class="dropdown-content">
+                    {{#each allArtists}}
+                    <a href="/artists/{{id}}" class="artist">{{name}}</a>
+                    {{!-- <a href="/artists/3" class="artist" data-id="3">Justin</a>
+                    <a href="/artists/1" class="artist" data-id="1">Tyler</a>
+                    <a href="/artists/4" class="artist" data-id="4">Halie</a> --}}
+                    {{/each}}
+                  </div>
+                </div>
+                <li class="nav-link"><a href="/appointments">Inquire</a></li>
+              </ul>
+            </navbar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   {{{body}}}
+  <footer>
+    <div class="columns has-text-centered">
+      <div class="column">
+        <a class="footer-link" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="footer-link" href="#"><i class="fab fa-facebook"></i></a>
+        <a class="footer-link" href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/form.js"></script>
+  <script src="/js/artists.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 
 </html>
