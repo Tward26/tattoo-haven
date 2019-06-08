@@ -1,7 +1,8 @@
 // Sample CalendarAPI settings
-const SERVICE_ACCT_ID = 'manager@bjs-tattoo-parlo-1559680213543.iam.gserviceaccount.com';
-const key = require('./keyfile.json').private_key;
-const TIMEZONE = 'UTC-05:00';
+require('dotenv').config();
+const SERVICE_ACCT_ID = 'manager@bjs-tattoo-haven.iam.gserviceaccount.com';
+const key = JSON.parse(process.env.KEYFILE).private_key;
+const TIMEZONE = 'America/Chicago';
 const CALENDAR_ID = {
   'tyler': 'lcv48g3bba5v733l5r4ce7lr8k@group.calendar.google.com',
   'justin': '2q2ufifmpqebeqgeu0g35h3qro@group.calendar.google.com',

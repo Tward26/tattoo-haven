@@ -2,6 +2,25 @@ const CONFIG = require('./settings.js');
 const CalendarAPI = require('node-google-calendar');
 let cal = new CalendarAPI(CONFIG);
 
+// var {google} = require("googleapis");
+// let privatekey = require('../../keyfile.json');
+
+// // configure a JWT auth client
+// let jwtClient = new google.auth.JWT(
+//   privatekey.client_email,
+//   null,
+//   privatekey.private_key,
+//   'https://www.googleapis.com/auth/calendar');
+// //authenticate request
+// jwtClient.authorize(function (err, tokens) {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   } else {
+//     console.log('Successfully connected!');
+//   }
+// });
+
 //insert events to specific calendar with attendee
 function insertEventWithAttendee(calendarId, startDateTime, endDateTime, description, attendeeName, attendeeEmail) {
   let event = {
