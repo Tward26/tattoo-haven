@@ -27,7 +27,7 @@ function insertEvent(calendarId, startDateTime, endDateTime, description, attend
   };
   return cal.Events.insert(calendarId, event)
     .then(resp => {
-      return resp
+      return resp;
     })
     .catch(err => {
       console.log('Error: insertEventWithAttendee', err.message);
@@ -66,8 +66,7 @@ function busyCheck(calendarId, startTime, endTime, description, attendeeName, at
         insertEvent(calId, startTime, endTime, description, attendeeName, attendeeEmail);
       }
       else {
-        available = false;
-        return available;
+        console.log('busy');
       }
     })
     .catch(err => {
@@ -106,7 +105,6 @@ function buildEndDateString(date, time) {
 // console.log(testEndCode);
 
 // busyCheck('1', '2019-06-08T12:00:00-05:00', '2019-06-08T14:00:00-05:00', "Idea", "Tyler Ward", "t.ward26@gmail.com");
-
 module.exports.busyCheck = busyCheck;
 module.exports.buildStart = buildStartDateString;
 module.exports.buildEnd = buildEndDateString;
