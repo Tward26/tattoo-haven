@@ -21,12 +21,16 @@ $('.submit').on('click', function () {
   var phone = parseInt($('#phone').val().split('-').join(''));
   var email = $('#email').val();
   var idea = $('#idea').val();
+  var date = $('#date').val();
+  var time = $('#time').val();
   $.post('api/clients', {
     type: 'POST',
     name: name,
     phone: phone,
     email: email,
     idea: idea,
+    date: date,
+    time: time,
     ArtistId: artistSelected
   }).then(function(data) {
     console.log(data);
