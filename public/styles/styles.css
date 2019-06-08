@@ -15,7 +15,7 @@ body {
   margin: 0 auto;
 }
 
-.fourohfour {
+/* .fourohfour {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +27,7 @@ body {
   height: 400px;
   color: rgb(55, 177, 173);
   -webkit-text-stroke: black 1px;
-}
+} */
 
 .header {
   /* background-image: url('../assets/img/header-grayscale.jpeg'); */
@@ -36,12 +36,78 @@ body {
   margin-bottom: 20px;
 }
 
-.logo {
-  background-image: url('../assets/img/cut-roses.svg');
-  background-repeat: no-repeat;
-  background-size: 500px;
+
+/* logo image */
+.card-image-1 {
+  background-image: url('../assets/img/logo.jpg');
   background-position: center;
-  background-blend-mode: lighten;
+  height: 470px;
+  background-repeat: no-repeat;
+  margin-top: -30px;
+}
+
+/* home foooter image */
+.card-footer-3 {
+  background-image: url('../assets/img/foot1.png');
+  background-position: center;
+  height: 90px;
+  background-repeat: no-repeat;
+  margin-bottom: -80px;
+}
+
+/* artist footer image */
+.card-footer-1 {
+  background-image: url('../assets/img/artist.png');
+  background-position: center;
+  height: 150px;
+  background-repeat: no-repeat;
+}
+
+/* inquire footer image */
+.card-footer-2 {
+  background-image: url('../assets/img/inquire.png');
+  background-position: center;
+  height: 150px;
+  background-repeat: no-repeat;
+  
+}
+
+/* home page background */
+.card-image-2 {
+  background-image: url('../assets/img/back1.jpg');
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 404 image */
+.card-image-3 {
+  background-image: url('../assets/img/404.png');
+  background-position: center;
+  height: 650px;
+  width: 500px;
+  margin: auto;
+  background-repeat: no-repeat;
+
+}
+
+.card-image-4 {
+  background-image: url('../assets/img/back2.jpg');
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-image-5 {
+  background-image: url('../assets/img/back5.jpg');
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#button {
+
+background-color: black;
 }
 
 .logo h1 {
@@ -67,14 +133,14 @@ navbar li {
   display: inline;
   list-style: none;
   padding: 80px;
-  font-family: 'Raleway', serif;
-  font-size: 30px;
+  font-family: 'Hurson';
+  font-size: 40px;
 }
 
 
 
 :root {
-  --mainColor: rgba(207, 65, 143, 0.5);
+  --mainColor:  rgba(2, 0, 97, 0.342);
 }
 
 .nav-link a {
@@ -94,7 +160,7 @@ navbar li {
 }
 
 .footer-link:hover {
-  color: rgba(207, 65, 143, 0.5);
+  color: rgba(2, 0, 97, 0.342);
 }
 
 a:hover {
@@ -111,7 +177,7 @@ a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  font-family: 'Raleway';
+  font-family: 'Hurson';
   font-size: 20px;
   background-color: #f1f1f1;
   min-width: 250px;
@@ -129,7 +195,7 @@ a:hover {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: rgba(207, 65, 143, 0.5);
+  background-color:rgba(2, 0, 97, 0.342);
 }
 
 /* Show the dropdown menu on hover */
@@ -168,12 +234,14 @@ img:hover {
 }
 
 footer {
-  margin-top: 40px;
+  margin: auto;
   font-size: 2em;
+  margin-top: 70px;
 }
 
 footer i {
-  padding: 15px;
+  padding: 5px;
+  margin: auto;
 }
 
 @media only screen and (min-width: 801px) {
