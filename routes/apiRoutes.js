@@ -81,6 +81,14 @@ module.exports = function (app) {
   // Create a new client
   app.post('/api/clients', async (req, res) => {
     try {
+      //format date and time
+      //function to generate endtime
+      //call freebusy function on that time
+      //if response.length != 0
+      //pop try-again modal
+      //else if response.length = 0
+      //create the client in db
+      //create the event
       const dbClient = await db.Client.create(req.body);
       res.json(dbClient);
     } catch (err) {
