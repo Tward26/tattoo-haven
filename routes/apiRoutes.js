@@ -1,4 +1,5 @@
 var db = require('../models');
+var calendar = require('../public/js/calendar');
 
 module.exports = function (app) {
   // Get all artists
@@ -81,16 +82,17 @@ module.exports = function (app) {
   // Create a new client
   app.post('/api/clients', async (req, res) => {
     try {
-      //format date and time
-      //function to generate endtime
-      //call freebusy function on that time
-      //if response.length != 0
-      //pop try-again modal
-      //else if response.length = 0
-      //create the client in db
-      //create the event
-      const dbClient = await db.Client.create(req.body);
-      res.json(dbClient);
+      let startTime = calendar.buildStart(req.body.date, req.body.time);
+      let endTime = calendar.buildEnd(req.body.date, req.body.time);
+
+      calendar.busyCheck(req.body.ArtistId, startTime, endTime, req.body.idea, req.body.name, req.body.email);
+        console.log("Free Busy returned free");
+        const dbClient = await db.Client.create(req.body);
+        res.send('Free');
+      else{
+        console.log("Free Busy returned false");
+        res.send('Busy');
+      }
     } catch (err) {
       res.status(500).send(err);
     }
