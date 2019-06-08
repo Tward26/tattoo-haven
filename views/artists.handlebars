@@ -1,24 +1,28 @@
-
 <section class="main">
-  {{#if artist}}
-  <div class="columns is-centered">
-    <div class="column is-5">
-      <div class="has-text-centered">
-        <img class="profilepic" src="/images/{{artist.profilepath}}" />
-        <hr>
-        <h1 class="title is-2">{{artist.name}}</h1>
+  <div class="card-image-5">
+    {{#if artist}}
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <div class="has-text-centered">
+          <img class="profilepic" src="/images/{{artist.profilepath}}" />
+          <hr>
+          <h1 class="title is-2">{{artist.name}}</h1>
+        </div>
+        <br>
       </div>
-      <br>
+      <div class="column is-5">
+        <p>{{artist.bio}}</p>
+        <p>{{artist.email}}</p>
+        {{#each artist.gallerypath}}
+        <img src="/images/{{this}}" />
+        {{/each}}
+      </div>
     </div>
-    <div class="column is-5">
-      <p>{{artist.bio}}</p>
-      <p>{{artist.email}}</p>
-      {{#each artist.gallerypath}}
-      <img src="/images/{{this}}" />
-      {{/each}}
+    {{else}}
+    blah blah blah
+    {{/if}}
+    <div class="card-footer-1">
+      <div class="column"></div>
     </div>
   </div>
-  {{else}}
-  blah blah blah
-  {{/if}}
 </section>
