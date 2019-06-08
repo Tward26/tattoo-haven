@@ -15,7 +15,7 @@
   <section class="hero is-small is-secondary header">
     <div class="hero-body">
       <div class="hamburger">
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a id="ham" href="#"><i class="fas fa-bars"></i></a>
       </div>
       <div class="columns is-mobile">
         <div class="column logo has-text-centered">
@@ -24,6 +24,11 @@
           <h1>Haven</h1>
           {{!-- <button id="authorize_button" style="display: none;">Authorize</button>
           <button id="signout_button" style="display: none;">Sign Out</button> --}}
+        </div>
+      </div>
+      <div class="columns">
+        <div id="mobilenav" class="column">
+          test content
         </div>
       </div>
       <div class="container">
@@ -62,11 +67,11 @@
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/form.js"></script>
+  <script src="/js/main.js"></script>
   <script src="/js/artists.js"></script>
-  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+  {{!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    </script> --}}
 </body>
 
 </html>
