@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-@import url('../assets/fonts/Hurson.ttf');
+@import url('../fonts/Hurson.ttf');
 
 @font-face {
   font-family: 'Hurson';
-  src: url('../assets/fonts/Hurson.ttf');
-  src: url('../assets/fonts/Hurson.ttf') format("woff"),
-    url('../assets/fonts/Hurson.ttf') format("opentype"),
-    url('../assets/fonts/Hurson.ttf') format("svg");
+  src: url('../fonts/Hurson.ttf');
+  src: url('../fonts/Hurson.ttf') format("woff"),
+    url('../fonts/Hurson.ttf') format("opentype"),
+    url('../fonts/Hurson.ttf') format("svg");
 }
 
 body {
@@ -15,31 +15,14 @@ body {
   margin: 0 auto;
 }
 
-/* .fourohfour {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Hurson';
-  font-size: 80px;
-  background-image: url('../assets/img/1006-Winged-skull.png');
-  background-position: center;
-  background-size: cover;
-  height: 400px;
-  color: rgb(55, 177, 173);
-  -webkit-text-stroke: black 1px;
-} */
-
 .header {
-  /* background-image: url('../assets/img/header-grayscale.jpeg'); */
   background-size: cover;
-  /* border-bottom: 5px rgb(46, 46, 46) solid; */
   margin-bottom: 20px;
 }
 
-
 /* logo image */
 .card-image-1 {
-  background-image: url('../assets/img/logo.jpg');
+  background-image: url('../images/logo.jpg');
   background-position: center;
   height: 470px;
   background-repeat: no-repeat;
@@ -48,7 +31,7 @@ body {
 
 /* home foooter image */
 .card-footer-3 {
-  background-image: url('../assets/img/foot1.png');
+  background-image: url('../images/foot1.png');
   background-position: center;
   height: 90px;
   background-repeat: no-repeat;
@@ -57,7 +40,7 @@ body {
 
 /* artist footer image */
 .card-footer-1 {
-  background-image: url('../assets/img/artist.png');
+  background-image: url('../images/artist.png');
   background-position: center;
   height: 150px;
   background-repeat: no-repeat;
@@ -65,24 +48,16 @@ body {
 
 /* inquire footer image */
 .card-footer-2 {
-  background-image: url('../assets/img/inquire.png');
+  background-image: url('../images/inquire.png');
   background-position: center;
   height: 150px;
   background-repeat: no-repeat;
   
 }
 
-/* home page background */
-.card-image-2 {
-  background-image: url('../assets/img/back1.jpg');
-  height: 600px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 /* 404 image */
 .card-image-3 {
-  background-image: url('../assets/img/404.png');
+  background-image: url('../images/404.png');
   background-position: center;
   height: 650px;
   width: 500px;
@@ -91,22 +66,15 @@ body {
 
 }
 
-.card-image-4 {
-  background-image: url('../assets/img/back2.jpg');
-  height: 600px;
+.card-image {
+  background-image: url('../images/back1.jpg');
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.card-image-5 {
-  background-image: url('../assets/img/back5.jpg');
-  height: 600px;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #button {
-
 background-color: black;
 }
 
@@ -136,8 +104,6 @@ navbar li {
   font-family: 'Hurson';
   font-size: 40px;
 }
-
-
 
 :root {
   --mainColor:  rgba(2, 0, 97, 0.342);
@@ -218,13 +184,17 @@ img:hover {
   /* FF 35+ */
 }
 
-
 .main {
   font-family: 'Raleway';
 }
 
 .main h1 {
   font-family: 'Hurson';
+}
+
+p, .title, .label{
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .calendar {
