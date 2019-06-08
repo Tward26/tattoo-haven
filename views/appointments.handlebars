@@ -1,90 +1,118 @@
-<section class="main card-image">
-
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="field">
-          <label class="label">Preferred Artist:</label>
-          <div class="control">
-            <div class="select artist">
-              <select id="artists">
-                <option disabled selected>Select Artist</option>
-                {{#each allArtists}}
-                <option class="artist" data-cal="{{googlepath}}" value="{{id}}">{{name}}</option>
-                {{/each}}
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-8 calendar">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input id="name" class="input" type="text" placeholder="Your Name">
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label">Phone</label>
-          <div class="control has-icons-left has-icons-right">
-            <input id="phone" class="input" type="tel" placeholder="999-999-9999">
-            <span class="icon is-small is-left">
-              <i class="fas fa-phone"></i>
-            </span>
-          </div>
-        </div>
-
-
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control has-icons-left has-icons-right">
-            <input id="email" class="input" type="email" placeholder="Your Email">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Date</label>
-          <div class="control has-icons-left has-icons-right">
-            <input id="phone" class="input" type="date" placeholder="">
-            <span class="icon is-small is-left">
-              <i class="fas fa-calendar"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Time</label>
-          <div class="control has-icons-left has-icons-right">
-            <input id="phone" class="input" type="time" placeholder="">
-            <span class="icon is-small is-left">
-              <i class="fas fa-clock"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Idea</label>
-          <div class="control">
-            <textarea id="idea" class="textarea" placeholder="Textarea"></textarea>
-          </div>
-        </div>
-
-        <div class="field is-grouped">
-          <div class="control">
-            <button id="button" class="submit button is-link">Submit</button>
-          </div>
+<div id="busy" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="columns">
+      <div class="column">
+        <div class="notification">
+          We apologize but that time slot is already taken. Please check
+          the artists calendar and make sure to pick an available time.
         </div>
       </div>
     </div>
-  
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<div id="free" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="columns">
+      <div class="column">
+        <div class="notification">
+          Your appointment has been confirmed!
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<section class="main card-image">
+
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="field">
+        <label class="label">Preferred Artist:</label>
+        <div class="control">
+          <div class="select artist">
+            <select id="artists">
+              <option disabled selected>Select Artist</option>
+              {{#each allArtists}}
+              <option class="artist" data-cal="{{googlepath}}" value="{{id}}">{{name}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8 calendar">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input id="name" class="input" type="text" placeholder="Your Name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Phone</label>
+        <div class="control has-icons-left has-icons-right">
+          <input id="phone" class="input" type="tel" placeholder="999-999-9999">
+          <span class="icon is-small is-left">
+            <i class="fas fa-phone"></i>
+          </span>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input id="email" class="input" type="email" placeholder="Your Email">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Date</label>
+        <div class="control has-icons-left has-icons-right">
+          <input id="date" class="input" type="date" placeholder="">
+          <span class="icon is-small is-left">
+            <i class="fas fa-calendar"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Time</label>
+        <div class="control has-icons-left has-icons-right">
+          <input id="time" class="input" type="time" placeholder="">
+          <span class="icon is-small is-left">
+            <i class="fas fa-clock"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Idea</label>
+        <div class="control">
+          <textarea id="idea" class="textarea" placeholder="Textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button id="button" class="submit button is-link">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="test-modal" class="submit button is-link">Modal Test</button>
 
 </section>
 
-  <div class="card-footer-2">
-      <div class="column"></div>
-    </div>
-
-
+<div class="card-footer-2">
+  <div class="column"></div>
+</div>

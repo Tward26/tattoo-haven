@@ -121,6 +121,11 @@ navbar li {
   transition: background-size .5s;
 }
 
+.shownav {
+  display: block;
+}
+
+
 .footer-link {
   color: black;
 }
@@ -218,6 +223,9 @@ footer i {
   .hamburger {
     visibility: hidden;
   }
+  #mobile-nav {
+  display: none;
+}
 }
 
 @media only screen and (max-width: 800px) {
@@ -232,7 +240,13 @@ footer i {
     font-size: 1.5em;
     color: black;
   }
-  #mobilenav {
-    display: none;
+
+  #mobile-nav {
+   display: none;
   }
+
+
+
+
+
 }

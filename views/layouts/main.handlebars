@@ -12,43 +12,62 @@
 </head>
 
 <body>
-  
-    <section class="hero is-small is-secondary header">
-      <div class="hero-body">
-        <div class="hamburger">
-          <a href="#"><i class="fas fa-bars"></i></a>
-        </div>
-        <div class="card-image-1">
-          <div class="column"></div>
-        </div>
-        <div class="container">
-          <div class="columns is-mobile has-text-centered navbar">
-            <div class="column navbar">
-              <navbar>
-                <ul>
-                  <li class="nav-link"><a href="/">Home</a></li>
-                  <div class="dropdown">
-                    <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
-                    <div class="dropdown-content">
-                      {{#each allArtists}}
-                      <a href="/artists/{{id}}" class="artist">{{name}}</a>
 
-                      {{/each}}
-                    </div>
+  <section class="hero is-small is-secondary header">
+    <div class="hero-body">
+      <div class="hamburger">
+        <a id="ham"><i class="fas fa-bars"></i></a>
+      </div>
+      <div class="card-image-1">
+        <div class="column"></div>
+      </div>
+      <div class="container">
+        <div class="columns is-mobile has-text-centered navbar">
+          <div class="column navbar">
+            <navbar>
+              <ul>
+                <li class="nav-link"><a href="/">Home</a></li>
+                <div class="dropdown">
+                  <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
+                  <div class="dropdown-content">
+                    {{#each allArtists}}
+                    <a href="/artists/{{id}}" class="artist">{{name}}</a>
+
+                    {{/each}}
                   </div>
-                  <li class="nav-link"><a href="/appointments">Inquire</a></li>
-                </ul>
-              </navbar>
-            </div>
+                </div>
+                <li class="nav-link"><a href="/appointments">Inquire</a></li>
+              </ul>
+            </navbar>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  <div id="mobile-nav" class="columns">
+    <div class="column">
+      <nav>
+        <ul>
+          <li class="nav-link"><a href="/">Home</a></li>
+          <div class="dropdown">
+            <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
+            <div class="dropdown-content">
+              {{#each allArtists}}
+              <a href="/artists/{{id}}" class="artist">{{name}}</a>
+
+              {{/each}}
+            </div>
+          </div>
+          <li class="nav-link"><a href="/appointments">Inquire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
   {{{body}}}
   {{!-- <div class="card-image1">
     <div class="column"></div>
   </div> --}}
-<br>
+  <br>
   <footer>
     <div class="columns has-text-centered">
       <div class="column">
