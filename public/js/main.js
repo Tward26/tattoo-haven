@@ -37,7 +37,6 @@ $('.submit').on('click', function () {
   var idea = $('#idea').val();
   var date = $('#date').val();
   var time = $('#time').val();
-  console.log(date, time)
   $.post('api/clients', {
     type: 'POST',
     name: name,
@@ -49,7 +48,7 @@ $('.submit').on('click', function () {
     ArtistId: artistSelected
   }).then(function (data) {
     console.log(data);
-    if (data.busy === 'true') {
+    if (data === 'Busy') {
       busyModal();
       console.log('Busy!');
     } else {
