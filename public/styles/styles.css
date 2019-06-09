@@ -15,6 +15,10 @@ body {
   margin: 0 auto;
 }
 
+.gallery{
+  max-width: 200px;
+}
+
 .header {
   background-size: cover;
   margin-bottom: 20px;
