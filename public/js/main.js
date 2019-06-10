@@ -81,13 +81,14 @@ $('.submit').on('click', function () {
       time: time,
       ArtistId: artistSelected
     }).then(function (data) {
+      console.log(data)
       $('#name').val('');
       $('#phone').val('');
       $('#email').val('');
       $('#idea').val('');
       $('#date').val('');
       $('#time').val('');
-      requiredP.text('');
+      $('.required').text('');
       if (data === 'Busy') {
         busyModal();
         console.log('Busy!');
