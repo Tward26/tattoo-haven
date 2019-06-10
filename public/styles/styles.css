@@ -60,8 +60,9 @@ body {
   font-family: 'Hurson';
 }
 
-.modal {
+.modal-content {
   color: white;
+  overflow-y: hidden;
 }
 
 .logo h1 {
