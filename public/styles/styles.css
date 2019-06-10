@@ -15,6 +15,10 @@ body {
   margin: 0 auto;
 }
 
+.numberText{
+  font-family: 'Times New Roman', Times, serif;
+}
+
 #cal {
   max-width: 700px;
 }
@@ -58,11 +62,20 @@ body {
 
 .modal h1 {
   font-family: 'Hurson';
+  margin-top: 10px;
 }
 
 .modal-content {
   color: white;
   overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: grey;
+  border-radius: 10px;
+}
+
+.modal-text{
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .logo h1 {
@@ -80,6 +93,11 @@ body {
 .profilepic {
   width: 400px;
   height: auto;
+}
+
+p{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 navbar li {
