@@ -6,8 +6,9 @@
         <div>
           <h1 class="title is-1">Our Apologies!</h1>
           <hr>
-          That time slot is already taken. Please check
+          <p class="has-text-left modal-text">That time slot is already taken. Please check
           the artists calendar and make sure to pick an available time.
+          <br><br></p>
         </div>
       </div>
     </div>
@@ -18,11 +19,11 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="columns">
-      <div class="column">
+      <div class="column has-text-centered">
         <div>
           <h1 class="title is-1">We Cannot Wait To Tattoo You!</h1>
             <hr>
-            Your appointment has been confirmed!
+            Your appointment has been confirmed!<br><br>
         </div>
       </div>
     </div>
@@ -33,7 +34,7 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="columns">
-      <div class="column">
+      <div class="column has-text-centered">
         <div>
           <h1 class="title is-1">Our Apologies!</h1>
           <hr>
@@ -45,9 +46,11 @@
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
+
 <section class="main card-image form">
   <div class="columns is-centered">
     <div class="column is-8">
+      <p class="has-text-centered">To book an appointment please use the form below. Our appointment booking hours are from <span class='numberText'>10</span> AM to <span class='numberText'>8</span> PM. All appointments are booked in <span class='numberText'>2</span> hour windows.</p>
       <div class="field">
         <label class="label">Preferred Artist:</label>
         <div class="control">
@@ -58,7 +61,7 @@
               <option class="artist" data-cal="{{googlepath}}" value="{{id}}">{{name}}</option>
               {{/each}}
             </select>
-            <p class="required"></p>
+            {{!-- <p class="required"></p> --}}
           </div>
         </div>
       </div>

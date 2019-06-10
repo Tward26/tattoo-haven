@@ -3,10 +3,16 @@ var busyModal = () => {
   $('.modal-close').click(function () {
     $('#busy').removeClass('is-active');
   });
+  $('.modal-background').click(function () {
+    $('#busy').removeClass('is-active');
+  });
 };
 
 var freeModal = () => {
   $('#free').addClass('is-active');
+  $('.modal-background').click(function () {
+    $('#free').removeClass('is-active');
+  });
   $('.modal-close').click(function () {
     $('#free').removeClass('is-active');
   });
@@ -14,9 +20,12 @@ var freeModal = () => {
 
 var shopHours = (time, context) => {
   var hoursDiv = $('.hours');
-  hoursDiv.text(`We\'re sorry but we do not accept reservations ${context} ${time}!`);
+  hoursDiv.html(`We\'re sorry but we do not accept reservations ${context} ${time}!<br><br>`);
   $('#hours').addClass('is-active');
   $('.modal-close').click(function () {
+    $('#hours').removeClass('is-active');
+  });
+  $('.modal-background').click(function () {
     $('#hours').removeClass('is-active');
   });
 };
@@ -54,15 +63,8 @@ $('.submit').on('click', function () {
   var floatTime = timeStringToFloat(time).toFixed(2);
   console.log(floatTime);
   if (artistSelected === '' || name === '' || phone === '' || email === '' || idea === '' || date === '' || time === '') {
-    $('#artists').toggleClass('is-danger');
-    $('#name').toggleClass('is-danger');
-    $('#phone').toggleClass('is-danger');
-    $('#email').toggleClass('is-danger');
-    $('#idea').toggleClass('is-danger');
-    $('#date').toggleClass('is-danger');
-    $('#time').toggleClass('is-danger');
     requiredP = $('.required');
-    $('.required').toggleClass('help is-danger');
+    $('.required').addClass('help is-danger');
     requiredP.text('This field is required');
   } else if (floatTime >= 20) {
     shopHours('8pm', 'after');
@@ -79,7 +81,13 @@ $('.submit').on('click', function () {
       time: time,
       ArtistId: artistSelected
     }).then(function (data) {
-      console.log(data);
+      $('#name').val('');
+      $('#phone').val('');
+      $('#email').val('');
+      $('#idea').val('');
+      $('#date').val('');
+      $('#time').val('');
+      requiredP.text('');
       if (data === 'Busy') {
         busyModal();
         console.log('Busy!');
