@@ -61,7 +61,7 @@ $('.submit').on('click', function () {
   var date = $('#date').val();
   var time = $('#time').val();
   var floatTime = timeStringToFloat(time).toFixed(2);
-  console.log(floatTime);
+
   if (artistSelected === '' || name === '' || phone === '' || email === '' || idea === '' || date === '' || time === '') {
     requiredP = $('.required');
     $('.required').addClass('help is-danger');
@@ -81,7 +81,6 @@ $('.submit').on('click', function () {
       time: time,
       ArtistId: artistSelected
     }).then(function (data) {
-      console.log(data)
       $('#name').val('');
       $('#phone').val('');
       $('#email').val('');
@@ -91,10 +90,8 @@ $('.submit').on('click', function () {
       $('.required').text('');
       if (data === 'Busy') {
         busyModal();
-        console.log('Busy!');
       } else {
         freeModal();
-        console.log('Success!');
       }
     });
   }
