@@ -242,7 +242,7 @@ footer i {
   margin: auto;
 }
 
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 701px) {
   .hamburger {
     visibility: hidden;
   }
@@ -252,7 +252,7 @@ footer i {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   .hero-body {
     height: 470px;
     background-image: url('../images/logo.jpg');
@@ -270,6 +270,7 @@ footer i {
     top: -50px;
     padding: 5px;
     font-size: 25px;
+    font-family: 'Hurson';
   }
 
   #cal {
