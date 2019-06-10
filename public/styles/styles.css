@@ -1,81 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-@import url('../fonts/Hurson.ttf');
+@import url('../assets/fonts/Hurson.ttf');
 
 @font-face {
   font-family: 'Hurson';
-  src: url('../fonts/Hurson.ttf');
-  src: url('../fonts/Hurson.ttf') format("woff"),
-    url('../fonts/Hurson.ttf') format("opentype"),
-    url('../fonts/Hurson.ttf') format("svg");
+  src: url('../assets/fonts/Hurson.ttf');
+  src: url('../assets/fonts/Hurson.ttf') format("woff"),
+    url('../assets/fonts/Hurson.ttf') format("opentype"),
+    url('../assets/fonts/Hurson.ttf') format("svg");
 }
 
 body {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.numberText{
-  font-family: 'Times New Roman', Times, serif;
-}
-
-#cal {
-  max-width: 700px;
-}
-
-.gallery {
-  max-width: 200px;
-}
-
-.hero-body {
-  background-image: url('../images/logo.jpg');
-  background-position: center;
-  background-size: 700px;
-  background-repeat: no-repeat;
-
-}
-
-/* 404 image */
-.card-image-3 {
-  background-image: url('../images/404.png');
-  background-position: center;
-  height: 650px;
-  width: 500px;
-  margin: auto;
-  background-repeat: no-repeat;
-
-}
-
-.card-image {
-  background-image: url('../images/back1.jpg');
-  height: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-#button {
-  background-color: black;
-}
-
-.modal h1 {
+.fourohfour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: 'Hurson';
-  margin-top: 10px;
+  font-size: 80px;
+  background-image: url('../assets/img/1006-Winged-skull.png');
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  color: rgb(55, 177, 173);
+  -webkit-text-stroke: black 1px;
 }
 
-.modal-content {
-  color: white;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  background-color: grey;
-  border-radius: 10px;
+.header {
+  /* background-image: url('../assets/img/header-grayscale.jpeg'); */
+  background-size: cover;
+  /* border-bottom: 5px rgb(46, 46, 46) solid; */
+  margin-bottom: 20px;
 }
 
-.modal-text{
-  margin-left: 5px;
-  margin-right: 5px;
+.logo {
+  background-image: url('../assets/img/cut-roses.svg');
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: center;
+  background-blend-mode: lighten;
 }
 
 .logo h1 {
@@ -95,23 +61,20 @@ body {
   height: auto;
 }
 
-p{
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 navbar li {
   position: relative;
-  top: 250px;
+  top: 5px;
   display: inline;
   list-style: none;
   padding: 80px;
-  font-family: 'Hurson';
-  font-size: 40px;
+  font-family: 'Raleway', serif;
+  font-size: 30px;
 }
 
+
+
 :root {
-  --mainColor: rgba(2, 0, 97, 0.342);
+  --mainColor: rgba(207, 65, 143, 0.5);
 }
 
 .nav-link a {
@@ -126,17 +89,12 @@ navbar li {
   transition: background-size .5s;
 }
 
-.shownav {
-  display: block;
-}
-
-
 .footer-link {
   color: black;
 }
 
 .footer-link:hover {
-  color: rgba(2, 0, 97, 0.342);
+  color: rgba(207, 65, 143, 0.5);
 }
 
 a:hover {
@@ -151,10 +109,9 @@ a:hover {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  top: 300px;
   display: none;
   position: absolute;
-  font-family: 'Hurson';
+  font-family: 'Raleway';
   font-size: 20px;
   background-color: #f1f1f1;
   min-width: 250px;
@@ -172,7 +129,7 @@ a:hover {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: rgba(2, 0, 97, 0.342);
+  background-color: rgba(207, 65, 143, 0.5);
 }
 
 /* Show the dropdown menu on hover */
@@ -195,52 +152,13 @@ img:hover {
   /* FF 35+ */
 }
 
-.main,
-button {
+
+.main {
   font-family: 'Raleway';
 }
 
-.main h1,
-.form,
-button {
+.main h1 {
   font-family: 'Hurson';
-}
-
-p,
-.title,
-.label {
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-.artists-links a {
-  color: white;
-  font-family: 'Hurson';
-  text-shadow: 2px 2px 4px #000000;
-  font-size: 25px;
-}
-
-.artists {
-  background-color: rgba(104, 104, 104, 0.3);
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  margin: 20px;
-  padding: 20px;
-}
-
-.artists:hover {
-  background-color: rgba(104, 104, 104, 0.8);
-  background-image: url('../images/skeleton.gif');
-  background-position-x: center;
-
-}
-
-.email-link {
-  color: white;
-}
-
-.email-link:hover {
-  color: red;
 }
 
 .calendar {
@@ -250,35 +168,21 @@ p,
 }
 
 footer {
-  margin: auto;
+  margin-top: 40px;
   font-size: 2em;
-  margin-top: 70px;
 }
 
 footer i {
-  padding: 5px;
-  margin: auto;
+  padding: 15px;
 }
 
 @media only screen and (min-width: 801px) {
   .hamburger {
     visibility: hidden;
   }
-
-  #mobile-nav {
-    display: none;
-  }
 }
 
 @media only screen and (max-width: 800px) {
-  .hero-body {
-    height: 470px;
-    background-image: url('../images/logo.jpg');
-    background-position: center;
-    background-size: 500px;
-    background-repeat: no-repeat;
-  }
-
   navbar li {
     display: none;
   }
@@ -289,40 +193,5 @@ footer i {
     visibility: visible;
     font-size: 1.5em;
     color: black;
-  }
-
-  #mobile-nav li {
-    position: relative;
-    top: -50px;
-    padding: 5px;
-    font-size: 25px;
-  }
-
-  #cal {
-    max-width: 500px;
-  }
-
-  .gallery {
-    max-width: 400px;
-    padding: 5px;
-  }
-
-  .gallery-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-  }
-
-  .hidenav {
-    display: none;
-  }
-
-  .dropdown {
-    display: none;
-  }
-
-  .dropdown-content {
-    display: none;
   }
 }

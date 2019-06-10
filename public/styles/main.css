@@ -4000,8 +4000,7 @@ a.list-item {
     display: flex; }
 
 .modal-background {
-  background-color: rgba(10, 10, 10, 0.86);
- }
+  background-color: rgba(10, 10, 10, 0.86); }
 
 .modal-content,
 .modal-card {

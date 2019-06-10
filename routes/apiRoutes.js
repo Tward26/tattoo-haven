@@ -1,5 +1,4 @@
 var db = require('../models');
-var calendar = require('../public/js/calendar');
 
 module.exports = function (app) {
   // Get all artists
@@ -82,20 +81,8 @@ module.exports = function (app) {
   // Create a new client
   app.post('/api/clients', async (req, res) => {
     try {
-      let startTime = calendar.buildStart(req.body.date, req.body.time);
-      let endTime = calendar.buildEnd(req.body.date, req.body.time);
-
-      let busy = calendar.busyCheck(req.body.ArtistId, startTime, endTime);
-      busy.then(function (result) {
-        if (result.length === 0) {
-          calendar.addEvent(req.body.ArtistId, startTime, endTime, req.body.idea, req.body.name, req.body.email);
-          db.Client.create(req.body);
-          res.send('Free');
-        }
-        else {
-          res.send('Busy');
-        }
-      });
+      const dbClient = await db.Client.create(req.body);
+      res.json(dbClient);
     } catch (err) {
       res.status(500).send(err);
     }

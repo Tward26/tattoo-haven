@@ -1,148 +1,98 @@
-<div id="busy" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="columns">
-      <div class="column has-text-centered">
-        <div>
-          <h1 class="title is-1">Our Apologies!</h1>
-          <hr>
-          <p class="has-text-left modal-text">That time slot is already taken. Please check
-          the artists calendar and make sure to pick an available time.
-          <br><br></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="modal-close is-large" aria-label="close"></button>
-</div>
-<div id="free" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="columns">
-      <div class="column has-text-centered">
-        <div>
-          <h1 class="title is-1">We Cannot Wait To Tattoo You!</h1>
-            <hr>
-            Your appointment has been confirmed!<br><br>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="modal-close is-large" aria-label="close"></button>
-</div>
-<div id="hours" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="columns">
-      <div class="column has-text-centered">
-        <div>
-          <h1 class="title is-1">Our Apologies!</h1>
-          <hr>
-        </div>
-        <div class="hours">
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="modal-close is-large" aria-label="close"></button>
-</div>
-
-<section class="main card-image form">
+<section class="main">
   <div class="columns is-centered">
     <div class="column is-8">
-      <p class="has-text-centered">To book an appointment please use the form below. Our appointment booking hours are from <span class='numberText'>10</span> AM to <span class='numberText'>8</span> PM. All appointments are booked in <span class='numberText'>2</span> hour windows.</p>
-      <div class="field">
-        <label class="label">Preferred Artist:</label>
-        <div class="control">
-          <div class="select artist">
-            <select id="artists">
-              <option disabled selected>Select Artist</option>
-              {{#each allArtists}}
-              <option class="artist" data-cal="{{googlepath}}" value="{{id}}">{{name}}</option>
-              {{/each}}
-            </select>
-            {{!-- <p class="required"></p> --}}
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8 calendar">
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control has-icons-left">
-          <input id="name" class="input" type="text" placeholder="Your Name">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-          <p class="required"></p>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Phone</label>
-        <div class="control has-icons-left has-icons-right">
-          <input id="phone" class="input" type="tel" placeholder="999-999-9999">
-          <span class="icon is-small is-left">
-            <i class="fas fa-phone"></i>
-          </span>
-          <p class="required"></p>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-          <input id="email" class="input" type="email" placeholder="Your Email">
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <p class="required"></p>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Date</label>
-        <div class="control has-icons-left has-icons-right">
-          <input id="date" class="input" type="date" placeholder="">
-          <span class="icon is-small is-left">
-            <i class="fas fa-calendar"></i>
-          </span>
-          <p class="required"></p>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Time</label>
-        <div class="control has-icons-left has-icons-right">
-          <input id="time" class="input" type="time" placeholder="">
-          <span class="icon is-small is-left">
-            <i class="fas fa-clock"></i>
-          </span>
-          <p class="required"></p>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Idea</label>
-        <div class="control">
-          <textarea id="idea" class="textarea"></textarea>
-          <p class="required"></p>
-        </div>
-      </div>
-      <div class="field is-grouped">
-        <div class="control">
-          <button id="button" class="submit button is-link">Submit</button>
-        </div>
+        <div class="field">
+    <label class="label">Preferred Artist:</label>
+    <div class="control">
+      <div class="select artist">
+        <select id="artists">
+          <option>Select Artist</option>
+          {{#each allArtists}}
+          <option value="{{id}}">{{name}}</option>
+          {{/each}}
+        </select>
       </div>
     </div>
+  </div>
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input id="name" class="input" type="text" placeholder="Your Name">
+    </div>
+  </div>
+
+  {{!-- <div class="field">
+    <label class="label">Username</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="Text input" value="bulma">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div> --}}
+    <div class="field">
+    <label class="label">Phone</label>
+    <div class="control has-icons-left has-icons-right">
+      <input id="phone" class="input" type="tel" placeholder="999-999-9999">
+      <span class="icon is-small is-left">
+        <i class="fas fa-phone"></i>
+      </span>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control has-icons-left has-icons-right">
+      <input id="email" class="input" type="email" placeholder="Your Email">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+
+
+
+  <div class="field">
+    <label class="label">Idea</label>
+    <div class="control">
+      <textarea id="idea" class="textarea" placeholder="Textarea"></textarea>
+    </div>
+  </div>
+
+  {{!-- <div class="field">
+    <div class="control">
+      <label class="checkbox">
+        <input type="checkbox">
+        I agree to the <a href="#">terms and conditions</a>
+      </label>
+    </div>
+  </div> --}}
+
+  {{!-- <div class="field">
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="question">
+        Yes
+      </label>
+      <label class="radio">
+        <input type="radio" name="question">
+        No
+      </label>
+    </div>
+  </div> --}}
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="submit button is-link">Submit</button>
+    </div>
+    <div class="control">
+      <button class="button is-text">Cancel</button>
+    </div>
+  </div>
+  </div>
   </div>
 </section>
-<footer>
-  <div class="columns has-text-centered">
-    <div class="column">
-      <div>
-        <img src="/images/inquire.png">
-      </div>
-      <a class="footer-link" href="#"><i class="fab fa-instagram"></i></a>
-      <a class="footer-link" href="#"><i class="fab fa-facebook"></i></a>
-      <a class="footer-link" href="#"><i class="fab fa-twitter"></i></a>
-    </div>
-  </div>
-</footer>
