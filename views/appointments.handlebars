@@ -2,9 +2,11 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="columns">
-      <div class="column">
-        <div class="notification">
-          We apologize but that time slot is already taken. Please check
+      <div class="column has-text-centered">
+        <div>
+          <h1 class="title is-1">Our Apologies!</h1>
+          <hr>
+          That time slot is already taken. Please check
           the artists calendar and make sure to pick an available time.
         </div>
       </div>
@@ -12,23 +14,38 @@
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
-
 <div id="free" class="modal">
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="columns">
       <div class="column">
-        <div class="notification">
-          Your appointment has been confirmed!
+        <div>
+          <h1 class="title is-1">We Cannot Wait To Tattoo You!</hl>
+            <hr>
+            Your appointment has been confirmed!
         </div>
       </div>
     </div>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
-
-<section class="main card-image">
-
+<div id="hours" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="columns">
+      <div class="column">
+        <div>
+          <h1 class="title is-1">Our Apologies!</h1>
+          <hr>
+        </div>
+        <div class="hours">
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<section class="main card-image form">
   <div class="columns is-centered">
     <div class="column is-8">
       <div class="field">
@@ -41,6 +58,7 @@
               <option class="artist" data-cal="{{googlepath}}" value="{{id}}">{{name}}</option>
               {{/each}}
             </select>
+            <p class="required"></p>
           </div>
         </div>
       </div>
@@ -50,11 +68,14 @@
       </div>
       <div class="field">
         <label class="label">Name</label>
-        <div class="control">
+        <div class="control has-icons-left">
           <input id="name" class="input" type="text" placeholder="Your Name">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <p class="required"></p>
         </div>
       </div>
-
       <div class="field">
         <label class="label">Phone</label>
         <div class="control has-icons-left has-icons-right">
@@ -62,10 +83,9 @@
           <span class="icon is-small is-left">
             <i class="fas fa-phone"></i>
           </span>
+          <p class="required"></p>
         </div>
       </div>
-
-
       <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
@@ -73,9 +93,9 @@
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
+          <p class="required"></p>
         </div>
       </div>
-
       <div class="field">
         <label class="label">Date</label>
         <div class="control has-icons-left has-icons-right">
@@ -83,6 +103,7 @@
           <span class="icon is-small is-left">
             <i class="fas fa-calendar"></i>
           </span>
+          <p class="required"></p>
         </div>
       </div>
       <div class="field">
@@ -92,15 +113,16 @@
           <span class="icon is-small is-left">
             <i class="fas fa-clock"></i>
           </span>
+          <p class="required"></p>
         </div>
       </div>
       <div class="field">
         <label class="label">Idea</label>
         <div class="control">
-          <textarea id="idea" class="textarea" placeholder="Textarea"></textarea>
+          <textarea id="idea" class="textarea"></textarea>
+          <p class="required"></p>
         </div>
       </div>
-
       <div class="field is-grouped">
         <div class="control">
           <button id="button" class="submit button is-link">Submit</button>
@@ -108,11 +130,16 @@
       </div>
     </div>
   </div>
-
-  <button id="test-modal" class="submit button is-link">Modal Test</button>
-
 </section>
-
-<div class="card-footer-2">
-  <div class="column"></div>
-</div>
+<footer>
+  <div class="columns has-text-centered">
+    <div class="column">
+      <div>
+        <img src="/images/inquire.png">
+      </div>
+      <a class="footer-link" href="#"><i class="fab fa-instagram"></i></a>
+      <a class="footer-link" href="#"><i class="fab fa-facebook"></i></a>
+      <a class="footer-link" href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</footer>

@@ -11,52 +11,24 @@
 }
 
 body {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.gallery{
+#cal {
+  max-width: 700px;
+}
+
+.gallery {
   max-width: 200px;
 }
 
-.header {
-  background-size: cover;
-  margin-bottom: 20px;
-}
-
-/* logo image */
-.card-image-1 {
+.hero-body {
   background-image: url('../images/logo.jpg');
   background-position: center;
-  height: 470px;
+  background-size: 700px;
   background-repeat: no-repeat;
-  margin-top: -30px;
-}
 
-/* home foooter image */
-.card-footer-3 {
-  background-image: url('../images/foot1.png');
-  background-position: center;
-  height: 90px;
-  background-repeat: no-repeat;
-  margin-bottom: -80px;
-}
-
-/* artist footer image */
-.card-footer-1 {
-  background-image: url('../images/artist.png');
-  background-position: center;
-  height: 150px;
-  background-repeat: no-repeat;
-}
-
-/* inquire footer image */
-.card-footer-2 {
-  background-image: url('../images/inquire.png');
-  background-position: center;
-  height: 150px;
-  background-repeat: no-repeat;
-  
 }
 
 /* 404 image */
@@ -76,10 +48,20 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 #button {
-background-color: black;
+  background-color: black;
+}
+
+.modal h1 {
+  font-family: 'Hurson';
+}
+
+.modal {
+  color: white;
 }
 
 .logo h1 {
@@ -101,7 +83,7 @@ background-color: black;
 
 navbar li {
   position: relative;
-  top: 5px;
+  top: 250px;
   display: inline;
   list-style: none;
   padding: 80px;
@@ -110,7 +92,7 @@ navbar li {
 }
 
 :root {
-  --mainColor:  rgba(2, 0, 97, 0.342);
+  --mainColor: rgba(2, 0, 97, 0.342);
 }
 
 .nav-link a {
@@ -150,6 +132,7 @@ a:hover {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  top: 300px;
   display: none;
   position: absolute;
   font-family: 'Hurson';
@@ -170,7 +153,7 @@ a:hover {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color:rgba(2, 0, 97, 0.342);
+  background-color: rgba(2, 0, 97, 0.342);
 }
 
 /* Show the dropdown menu on hover */
@@ -193,17 +176,49 @@ img:hover {
   /* FF 35+ */
 }
 
-.main {
+.main, button {
   font-family: 'Raleway';
 }
 
-.main h1 {
+.main h1, .form, button {
   font-family: 'Hurson';
 }
 
-p, .title, .label{
+p,
+.title,
+.label {
   color: white;
   text-shadow: 2px 2px 4px #000000;
+}
+
+.artists-links a {
+  color: white;
+  font-family: 'Hurson';
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 25px;
+}
+
+.artists {
+  background-color: rgba(104, 104, 104, 0.3);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  margin: 20px;
+  padding: 20px;
+}
+
+.artists:hover {
+  background-color: rgba(104, 104, 104, 0.8);
+  background-image: url('../images/skeleton.gif');
+  background-position-x: center;
+
+}
+
+.email-link {
+  color: white;
+}
+
+.email-link:hover {
+  color: red;
 }
 
 .calendar {
@@ -227,12 +242,21 @@ footer i {
   .hamburger {
     visibility: hidden;
   }
+
   #mobile-nav {
-  display: none;
-}
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {
+  .hero-body {
+    height: 470px;
+    background-image: url('../images/logo.jpg');
+    background-position: center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+  }
+
   navbar li {
     display: none;
   }
@@ -245,12 +269,26 @@ footer i {
     color: black;
   }
 
-  #mobile-nav {
-   display: none;
+  #mobile-nav li {
+    position: relative;
+    top: -50px;
+    padding: 5px;
+    font-size: 25px;
   }
 
+  #cal {
+    max-width: 500px;
+  }
 
+  .hidenav {
+    display: none;
+  }
 
+  .dropdown {
+    display: none;
+  }
 
-
+  .dropdown-content {
+    display: none;
+  }
 }
