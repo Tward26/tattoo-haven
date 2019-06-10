@@ -177,11 +177,14 @@ img:hover {
   /* FF 35+ */
 }
 
-.main, button {
+.main,
+button {
   font-family: 'Raleway';
 }
 
-.main h1, .form, button {
+.main h1,
+.form,
+button {
   font-family: 'Hurson';
 }
 
@@ -279,6 +282,18 @@ footer i {
 
   #cal {
     max-width: 500px;
+  }
+
+  .gallery {
+    max-width: 400px;
+    padding: 5px;
+  }
+
+  .gallery-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }
 
   .hidenav {
