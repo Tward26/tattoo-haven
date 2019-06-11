@@ -42,6 +42,8 @@ $('#artists').on('change', function () {
 });
 
 $('#ham').on('click', function () {
+  var hamburger = $('#ham');
+  hamburger.toggleClass('is-active');
   var mobileNav = $('#mobile-nav');
   mobileNav.toggleClass('hidenav');
 });
