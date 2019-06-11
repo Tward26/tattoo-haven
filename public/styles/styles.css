@@ -260,7 +260,7 @@ footer i {
   margin: auto;
 }
 
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 701px) {
   .hamburger {
     visibility: hidden;
   }
@@ -270,7 +270,7 @@ footer i {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   .hero-body {
     height: 470px;
     background-image: url('../images/logo.jpg');
@@ -283,23 +283,16 @@ footer i {
     display: none;
   }
 
-  .hamburger a {
-    display: flex;
-    justify-content: flex-end;
-    visibility: visible;
-    font-size: 1.5em;
-    color: black;
-  }
-
   #mobile-nav li {
     position: relative;
     top: -50px;
     padding: 5px;
     font-size: 25px;
+    font-family: 'Hurson';
   }
 
   #cal {
-    max-width: 500px;
+    max-width: 350px;
   }
 
   .gallery {

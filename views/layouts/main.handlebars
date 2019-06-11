@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <title>BJ'S TATTOO HAVEN</title>
   <link type="text/css" rel="stylesheet" href="/styles/main.css">
   <link type="text/css" rel="stylesheet" href="/styles/styles.css">
+  <link type="text/css" rel="stylesheet" href="/styles/hamburgers.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/acfa7ab8e7.js"></script>
 </head>
 
@@ -15,21 +16,16 @@
   <section class="hero is-large is-secondary header">
     <div class="hero-body">
       <div class="hamburger">
-        <a id="ham"><i class="fas fa-bars"></i></a>
+        <div id="ham" class="hamburger-box hamburger--elastic-r">
+          <div class="hamburger-inner"></div>
+        </div>
       </div>
       <div class="columns is-mobile has-text-centered navbar is-centered">
         <div class="column navbar">
           <navbar>
             <ul>
               <li class="nav-link"><a href="/">Home</a></li>
-              <div class="dropdown">
-                <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
-                <div class="dropdown-content">
-                  {{#each allArtists}}
-                  <a href="/artists/{{id}}" class="artist">{{name}}</a>
-                  {{/each}}
-                </div>
-              </div>
+              <li class="nav-link"><a href="/artists">Artists</a></li>
               <li class="nav-link"><a href="/appointments">Inquire</a></li>
             </ul>
           </navbar>

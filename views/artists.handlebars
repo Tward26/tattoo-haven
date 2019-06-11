@@ -1,37 +1,40 @@
 <section class='main card-image'>
-  {{#if artist}}
-  <div class='columns is-centered'>
-    <div class='column is-5'>
-      <div class='has-text-centered'>
-        <img class='profilepic' src='/images/{{artist.profilepath}}' />
-        <hr>
-        <h1 class='title is-2'>{{artist.name}}</h1>
-         <p>{{artist.bio}}</p>
-         <br>
-      <a class='email-link' href='mailto:{{artist.email}}?subject=Tattoo Inquiry' target='_blank'>{{artist.email}}</a>
+  <div class="column">
+    {{#if artist}}
+    <div class='columns is-centered'>
+      <div class='column is-6'>
+        <div class='has-text-centered'>
+          <img class='profilepic' src='/images/{{artist.profilepath}}' />
+          <hr>
+          <h1 class='title is-2'>{{artist.name}}</h1>
+          <p>{{artist.bio}}</p>
+          <br>
+          <a class='email-link' href='mailto:{{artist.email}}?subject=Tattoo Inquiry'
+            target='_blank'>{{artist.email}}</a>
+        </div>
+        <br>
       </div>
-      <br>
-    </div>
-    <div class='column is-6 gallery-mobile'>
-      {{#each artist.gallerypath}}
-      <img class='gallery' src='/images/{{this}}'/>
-      {{/each}}
-    </div>
-  </div>
-  {{else}}
-  <div class='columns is-centered'>
-    <div class='column is-centered has-text-centered'>
-      {{#each allArtists}}
-      <img class='gallery' src='/images/{{profilepath}}' alt=''>
-      <div class='artists'>
-        <ul>
-          <li class='artists-links'><a href='/artists/{{id}}' class='artist'>{{name}}</a></li>
-        </ul>
+      <div class='column is-6 gallery-mobile'>
+        {{#each artist.gallerypath}}
+        <img class='gallery' src='/images/{{this}}' />
+        {{/each}}
       </div>
-      {{/each}}
     </div>
+    {{else}}
+    <div class='columns is-centered'>
+      <div class='column is-centered has-text-centered'>
+        {{#each allArtists}}
+        <img class='gallery' src='/images/{{profilepath}}' alt=''>
+        <div class='artists'>
+          <ul>
+            <li class='artists-links'><a href='/artists/{{id}}' class='artist'>{{name}}</a></li>
+          </ul>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
   </div>
-  {{/if}}
 </section>
 <footer>
   <div class='columns has-text-centered'>
