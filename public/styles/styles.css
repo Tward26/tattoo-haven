@@ -28,10 +28,11 @@ body {
 }
 
 .hero-body {
-  background-image: url('../images/logo.jpg');
+  background-image: url('../images/logo.png');
   background-position: center;
-  background-size: 700px;
+  background-size: 650px;
   background-repeat: no-repeat;
+ margin-top: -60px;
 
 }
 
