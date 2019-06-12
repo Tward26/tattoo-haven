@@ -28,12 +28,12 @@ body {
 }
 
 .hero-body {
+  display: block;
   background-image: url('../images/logo.png');
   background-position: center;
   background-size: 650px;
   background-repeat: no-repeat;
- margin-top: -60px;
-
+  margin-top: -150px;
 }
 
 /* 404 image */
@@ -103,12 +103,12 @@ p{
 
 navbar li {
   position: relative;
-  top: 250px;
   display: inline;
   list-style: none;
   padding: 80px;
   font-family: 'Hurson';
   font-size: 40px;
+  top: -50px;
 }
 
 :root {
@@ -152,7 +152,7 @@ a:hover {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  top: 300px;
+  top: 0px;
   display: none;
   position: absolute;
   font-family: 'Hurson';
