@@ -273,6 +273,7 @@ footer i {
 
 @media only screen and (max-width: 700px) {
   .hero-body {
+    margin-top: -50px;
     height: 470px;
     background-image: url('../images/logo.jpg');
     background-position: center;
@@ -286,9 +287,9 @@ footer i {
 
   #mobile-nav li {
     position: relative;
-    top: -50px;
-    padding: 5px;
-    font-size: 25px;
+    top: -65px;
+    padding: 10px;
+    font-size: 30px;
     font-family: 'Hurson';
   }
 
