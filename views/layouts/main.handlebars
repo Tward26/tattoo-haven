@@ -14,43 +14,44 @@
 
 <body>
   <section class="hero is-large is-secondary header">
+   <button id="ham" class="hamburger hamburger--elastic-r" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
     <div class="hero-body">
-      <div class="hamburger">
-        <div id="ham" class="hamburger-box hamburger--elastic-r">
-          <div class="hamburger-inner"></div>
-        </div>
-      </div>
       <div class="columns is-mobile has-text-centered navbar is-centered">
-        <div class="column navbar">
-          <navbar>
-            <ul>
-              <li class="nav-link"><a href="/">Home</a></li>
-              <div class="dropdown">
-                <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
-                <div class="dropdown-content">
-                  {{#each allArtists}}
-                  <a href="/artists/{{id}}" class="artist">{{name}}</a>
-                  {{/each}}
-                </div>
-              </div>
-              <li class="nav-link"><a href="/appointments">Inquire</a></li>
-            </ul>
-          </navbar>
-        </div>
       </div>
     </div>
-    <div id="mobile-nav" class="columns hidenav">
-      <div class="column has-text-centered ">
-        <nav>
-          <ul>
-            <li class="nav-link"><a href="/">Home</a></li>
+    <div class="column navbar has-text-centered">
+      <navbar>
+        <ul>
+          <li class="nav-link"><a href="/">Home</a></li>
+          <div class="dropdown">
             <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
-            <li class="nav-link"><a href="/appointments">Inquire</a></li>
-          </ul>
-        </nav>
-      </div>
+            <div class="dropdown-content">
+              {{#each allArtists}}
+              <a href="/artists/{{id}}" class="artist">{{name}}</a>
+              {{/each}}
+            </div>
+          </div>
+          <li class="nav-link"><a href="/appointments">Inquire</a></li>
+        </ul>
+      </navbar>
     </div>
   </section>
+  <div id="mobile-nav" class="columns hidenav">
+    <div class="column has-text-centered ">
+      <nav>
+        <ul>
+          <br><br>
+          <li class="nav-link"><a href="/">Home</a></li>
+          <li class="nav-link dropbtn"><a href="/artists">Artists</a></li>
+          <li class="nav-link"><a href="/appointments">Inquire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 
   {{{body}}}
   <br>

@@ -6,7 +6,7 @@
  * @link https://github.com/jonsuh/hamburgers
  */
 .hamburger {
-  padding: 0px;
+  padding: 50px;
   display: flex;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -30,9 +30,10 @@
 
 .hamburger-box {
   margin-left: auto;
-  width: 40px;
-  height: 24px;
-  position: relative; }
+  width: 10px;
+  height: 5px;
+  position: relative;
+}
 
 .hamburger-inner {
   top: 50%;
@@ -703,3 +704,4 @@
   .hamburger--vortex-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg); }
+

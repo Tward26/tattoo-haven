@@ -28,11 +28,12 @@ body {
 }
 
 .hero-body {
-  background-image: url('../images/logo.jpg');
+  display: block;
+  background-image: url('../images/logo.png');
   background-position: center;
-  background-size: 700px;
+  background-size: 650px;
   background-repeat: no-repeat;
-
+  margin-top: -150px;
 }
 
 /* 404 image */
@@ -102,12 +103,12 @@ p{
 
 navbar li {
   position: relative;
-  top: 250px;
   display: inline;
   list-style: none;
   padding: 80px;
   font-family: 'Hurson';
   font-size: 40px;
+  top: -50px;
 }
 
 :root {
@@ -151,7 +152,7 @@ a:hover {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  top: 300px;
+  top: 0px;
   display: none;
   position: absolute;
   font-family: 'Hurson';
@@ -272,6 +273,7 @@ footer i {
 
 @media only screen and (max-width: 700px) {
   .hero-body {
+    margin-top: -50px;
     height: 470px;
     background-image: url('../images/logo.jpg');
     background-position: center;
@@ -285,9 +287,9 @@ footer i {
 
   #mobile-nav li {
     position: relative;
-    top: -50px;
-    padding: 5px;
-    font-size: 25px;
+    top: -65px;
+    padding: 10px;
+    font-size: 30px;
     font-family: 'Hurson';
   }
 
